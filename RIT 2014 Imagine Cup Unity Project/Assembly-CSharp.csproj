@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Imported Assets\Clock\Scripts\Clock.cs" />
      <Compile Include="Assets\Scripts\Elevator.cs" />
+     <Compile Include="Assets\Scripts\Flashlight.cs" />
      <Compile Include="Assets\Scripts\LevelChecks.cs" />
      <None Include="Assets\Imported Assets\plants\dd\AlphaTest-Bumped.shader" />
      <None Include="Assets\Imported Assets\Chairs and sofas pack\Readme.txt" />
