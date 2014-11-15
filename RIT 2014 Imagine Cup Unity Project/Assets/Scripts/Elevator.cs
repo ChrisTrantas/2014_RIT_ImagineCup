@@ -10,15 +10,15 @@ public class Elevator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	if(
+
 	}
 
 	void GoingDown(){
-
+		/*
 			if (KeyCode == 'e') 
 			{
 						audio.Play ();
 						Application.LoadLevel ("1st Level");
-				}
+				} */
 		}
 }
