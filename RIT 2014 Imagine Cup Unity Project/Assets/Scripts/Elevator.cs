@@ -25,7 +25,7 @@ public class Elevator : MonoBehaviour {
 						//Turn Off Directional Light
 
 						// Play sound maybe?
-						audio.loop = true;
+						//audio.loop = true;
 						// Load the next scene
 						Application.LoadLevel ("1st Level");
 						//Object.DontDestroyOnLoad (CharacterController);
