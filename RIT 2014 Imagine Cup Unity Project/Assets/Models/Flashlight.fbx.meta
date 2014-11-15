@@ -1,8 +1,14 @@
 fileFormatVersion: 2
-guid: 557fbcde32e67a94595a11f002bf5fb9
+guid: 14e968ccef29c2d4c9ebfe03aee310c7
 ModelImporter:
   serializedVersion: 16
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pCylinder1
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -22,7 +28,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0
+    globalScale: .100000001
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
