@@ -14,8 +14,19 @@ public class TriggerLight : MonoBehaviour {
 	void Update () {
 		if (triggered) {
 			foreach(Light light in lights) {
-				if(light.intensity > 0){
-					light.intensity -= light.intensity/2* Time.deltaTime;
+				for(int i = 0; i < 60; i++)
+				{
+					if(i%2 > 0)
+					{
+					light.intensity = 0;
+			
+					}
+					else
+					{
+						light.intensity = 100;
+					
+					}
+
 				}
 			}
 		}
@@ -24,4 +35,8 @@ public class TriggerLight : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		triggered = true;
 	}
+
+	void Flicker(){
+
+		}
 }
