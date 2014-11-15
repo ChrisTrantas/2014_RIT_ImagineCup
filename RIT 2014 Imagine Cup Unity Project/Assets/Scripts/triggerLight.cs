@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class triggerLight : MonoBehaviour {
+public class TriggerLight : MonoBehaviour {
 	public Light[] lights;
 	bool triggered = false;
 
@@ -13,17 +13,15 @@ public class triggerLight : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (triggered) {
-			foreach(Light light in lights)
-			{
-				light.enabled = false;
+			foreach(Light light in lights) {
+				if(light.intensity > 0){
+					light.intensity -= light.intensity/2* Time.deltaTime;
+				}
 			}
 		}
 	}
 
 	void OnTriggerEnter(Collider other) {
-		foreach(Light light in lights)
-		{
-			light.intensity = (Random.Range(0.5));
-		}
+		triggered = true;
 	}
 }
