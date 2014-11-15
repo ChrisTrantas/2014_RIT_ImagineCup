@@ -57,7 +57,11 @@
      <None Include="Assets\Imported Assets\Snack_machines\readme.txt" />
      <None Include="Assets\Imported Assets\Urban_Props\readme.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
+<<<<<<< HEAD
+ <HintPath>D:/Users/lms7898/ImagineCup/RIT 2014 Imagine Cup Unity Project/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+=======
  <HintPath>D:/Users/mtc5284/2014_RIT_ImagineCup/RIT 2014 Imagine Cup Unity Project/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+>>>>>>> d6ef8c2790b3da283db88bb95dce649b968477ad
  </Reference>
   </ItemGroup>
   <ItemGroup>

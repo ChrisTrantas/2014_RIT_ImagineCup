@@ -5,12 +5,26 @@ public class Elevator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		audio.loop = false;
+		//audio.loop = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		GoingDown ();
+		Ray ray;
+		RaycastHit hit;
+		ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+
+		Debug.DrawRay (ray.origin, ray.direction * 10, Color.cyan);
+
+
+		if (Physics.Raycast (ray, out hit)) {
+			print ("I'm looking at " + hit.transform.name);
+			if(hit.transform.name == "Panel")
+			{
+				GoingDown ();
+			}
+		}
+
 	}
 
 	void GoingDown(){
