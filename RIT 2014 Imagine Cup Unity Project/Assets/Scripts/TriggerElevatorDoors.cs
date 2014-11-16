@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class TriggerElevatorDoors : MonoBehaviour {
@@ -20,11 +20,15 @@ public class TriggerElevatorDoors : MonoBehaviour {
 				if(openDoor){
 					foreach(GameObject elevatorDoor in elevatorDoors){
 						elevatorDoor.GetComponent<ElevatorDoor>().open();
+						triggered = false;
+						timer = 0;
 					}
 				}
 				else {
 					foreach(GameObject elevatorDoor in elevatorDoors){
 						elevatorDoor.GetComponent<ElevatorDoor>().close();
+						triggered = false;
+						timer = 0;
 					}
 				}
 			}
