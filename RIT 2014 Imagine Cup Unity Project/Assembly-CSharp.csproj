@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\LevelChecks.cs" />
      <Compile Include="Assets\Scripts\PlayerInteraction.cs" />
      <Compile Include="Assets\Scripts\PlayerInventory.cs" />
+     <Compile Include="Assets\Scripts\RotatingDoor.cs" />
      <Compile Include="Assets\Scripts\TriggerElevatorDoors.cs" />
      <Compile Include="Assets\Scripts\TriggerLight.cs" />
      <None Include="Assets\Imported Assets\plants\dd\AlphaTest-Bumped.shader" />

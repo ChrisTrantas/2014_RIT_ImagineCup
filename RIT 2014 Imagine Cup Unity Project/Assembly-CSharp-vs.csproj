@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\LevelChecks.cs" />
      <Compile Include="Assets\Scripts\PlayerInteraction.cs" />
      <Compile Include="Assets\Scripts\PlayerInventory.cs" />
+     <Compile Include="Assets\Scripts\RotatingDoor.cs" />
      <Compile Include="Assets\Scripts\TriggerElevatorDoors.cs" />
      <Compile Include="Assets\Scripts\TriggerLight.cs" />
      <None Include="Assets\Imported Assets\plants\dd\AlphaTest-Bumped.shader" />
@@ -61,7 +62,11 @@
      <None Include="Assets\Imported Assets\Snack_machines\readme.txt" />
      <None Include="Assets\Imported Assets\Urban_Props\readme.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
+<<<<<<< HEAD
  <HintPath>D:/Users/cmt4536/RIT 2014 Imagine Cup Hack-a-thon/RIT 2014 Imagine Cup Unity Project/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+=======
+ <HintPath>D:/Users/mtc5284/2014_RIT_ImagineCup/RIT 2014 Imagine Cup Unity Project/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+>>>>>>> b12b3790f62b802ec584d9bd9b33d1e1c1ff2ea2
  </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -27,7 +27,6 @@ public class ElevatorDoor : MonoBehaviour {
 				opening = false;
 			}
 		} else if (closing) {
-			print (timer);
 			timer += Time.deltaTime;
 			transform.localPosition = openPosition - direction * distance / duration * timer ;
 			if (timer > duration) {
