@@ -42,10 +42,21 @@ public class PlayerInteraction : MonoBehaviour {
 			else if(hit.transform.name == "Flashlight" && Input.GetKeyDown (KeyCode.E) )	{
 				GetComponent<PlayerInventory>().giveFlashlight();
 				hit.transform.gameObject.SetActive(false);
+			}else if(hit.transform.name == "MaintenanceKey" && Input.GetKeyDown (KeyCode.E) )	{
+				GetComponent<PlayerInventory>().giveKey("MaintenanceKey");
+				hit.transform.gameObject.SetActive(false);
 			} 
 			else if(hit.transform.name == "UsableDoor" && Input.GetKeyDown (KeyCode.E) )	{
 				if(hit.transform.GetComponent<RotatingDoor>().closed) {
 					hit.transform.GetComponent<RotatingDoor>().open();
+				} 
+				else {
+					hit.transform.GetComponent<RotatingDoor>().close();
+				}
+			}
+			else if(hit.transform.name == "MaintenanceDoor" && Input.GetKeyDown (KeyCode.E) )	{
+				if(hit.transform.GetComponent<RotatingDoor>().closed) {
+					hit.transform.GetComponent<RotatingDoor>().openMaintenance();
 				} 
 				else {
 					hit.transform.GetComponent<RotatingDoor>().close();

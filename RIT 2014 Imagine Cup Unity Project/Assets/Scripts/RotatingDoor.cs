@@ -40,6 +40,20 @@ public class RotatingDoor : MonoBehaviour {
 			closed = false;
 		}
 	}
+
+	public void openMaintenance()	{
+		if (closed) {
+			if (GetComponent<PlayerInventory>().checkForKey("MaintenanceKey") == true)
+			{
+				opening = true;
+				closed = false;
+			}
+			else
+			{
+				//display message saying player needs key
+			}
+		}
+	}
 	
 	public void close(){
 		if (!closed) {
