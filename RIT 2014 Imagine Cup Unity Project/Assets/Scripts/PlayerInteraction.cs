@@ -6,6 +6,9 @@ public class PlayerInteraction : MonoBehaviour {
 	GUIContent gUIContent = new GUIContent();
 	public GUIStyle gUIStyle = new GUIStyle();
 	string currentLvl = "Start";
+
+	private Vector3 vec;
+
 	// Use this for initialization
 	void Start () {
 		//audio.loop = false;
@@ -15,7 +18,11 @@ public class PlayerInteraction : MonoBehaviour {
 	void Update () {
 		Ray ray;
 		RaycastHit hit;
-		ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+		vec.x = (float)Screen.width / 2;
+		vec.y = (float)Screen.height / 2;
+		vec.z = 0;
+
+		ray = Camera.main.ScreenPointToRay (vec);
 
 		Debug.DrawRay (ray.origin, ray.direction * 10, Color.cyan);
 
@@ -40,8 +47,8 @@ public class PlayerInteraction : MonoBehaviour {
 	}
 
 	void OnGUI() {
-		GUI.Box (new Rect (Input.mousePosition.x - 60, 
-		                   Screen.height - Input.mousePosition.y - gUIStyle.CalcHeight (gUIContent, 120), 
+		GUI.Box (new Rect (Screen.width /2, 
+		                   Screen.height /2 - gUIStyle.CalcHeight (gUIContent, 120), 
 		                   120, gUIStyle.CalcHeight (gUIContent, 120)), 
 		          gUIContent, 
 		        gUIStyle);

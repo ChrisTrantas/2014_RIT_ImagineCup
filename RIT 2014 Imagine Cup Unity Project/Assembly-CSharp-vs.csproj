@@ -47,20 +47,21 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Imported Assets\Clock\Scripts\Clock.cs" />
+     <Compile Include="Assets\Scripts\AffectPlayer.cs" />
      <Compile Include="Assets\Scripts\ElevatorDoor.cs" />
      <Compile Include="Assets\Scripts\Flashlight.cs" />
      <Compile Include="Assets\Scripts\LevelChecks.cs" />
      <Compile Include="Assets\Scripts\PlayerInteraction.cs" />
      <Compile Include="Assets\Scripts\PlayerInventory.cs" />
      <Compile Include="Assets\Scripts\TriggerElevatorDoors.cs" />
-     <Compile Include="Assets\Scripts\TriggerLight.cs" />
+     <Compile Include="Assets\Scripts\triggerLight.cs" />
      <None Include="Assets\Imported Assets\plants\dd\AlphaTest-Bumped.shader" />
      <None Include="Assets\Imported Assets\Chairs and sofas pack\Readme.txt" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Imported Assets\Snack_machines\readme.txt" />
      <None Include="Assets\Imported Assets\Urban_Props\readme.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>D:/Users/cmt4536/RIT 2014 Imagine Cup Hack-a-thon/RIT 2014 Imagine Cup Unity Project/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>D:/Users/lms7898/ImagineCup/RIT 2014 Imagine Cup Unity Project/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
