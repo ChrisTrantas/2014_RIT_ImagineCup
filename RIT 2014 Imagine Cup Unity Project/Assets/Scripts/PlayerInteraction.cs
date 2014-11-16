@@ -23,20 +23,20 @@ public class PlayerInteraction : MonoBehaviour {
 		if (Physics.Raycast (ray, out hit)) {
 			print ("I'm looking at " + hit.transform.name);
 			gUIContent.text = "I'm looking at " + hit.transform.name;
-			if(hit.transform.name == "Panel")
-			{
+
+			if(hit.transform.name == "Panel") {
 				GoingDown ();
-			}
-		}
-		if (Physics.Raycast ( ray, out hit))
-		{
-			if(hit.transform.name == "Flashlight" && Input.GetKeyDown (KeyCode.E) )
-			{
+			} else if(hit.transform.name == "Flashlight" && Input.GetKeyDown (KeyCode.E) )	{
 				GetComponent<PlayerInventory>().giveFlashlight();
 				hit.transform.gameObject.SetActive(false);
+			} else if(hit.transform.name == "UsableDoor" && Input.GetKeyDown (KeyCode.E) )	{
+				if(hit.transform.GetComponent<RotatingDoor>().closed) {
+					hit.transform.GetComponent<RotatingDoor>().open();
+				} else {
+					hit.transform.GetComponent<RotatingDoor>().close();
+				}
 			}
 		}
-
 	}
 
 	void OnGUI() {
@@ -44,7 +44,7 @@ public class PlayerInteraction : MonoBehaviour {
 		                   Screen.height - Input.mousePosition.y - gUIStyle.CalcHeight (gUIContent, 120), 
 		                   120, gUIStyle.CalcHeight (gUIContent, 120)), 
 		          gUIContent, 
-		        gUIStyle);
+		         gUIStyle);
 	}
 
 	void GoingDown(){
