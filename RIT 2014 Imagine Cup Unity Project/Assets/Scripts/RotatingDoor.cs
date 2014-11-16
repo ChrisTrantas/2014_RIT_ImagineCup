@@ -2,6 +2,9 @@
 using System.Collections;
 
 public class RotatingDoor : MonoBehaviour {
+	public bool locked= false;
+	public string neededKey;
+
 	public bool closed = true;
 	/// <summary>
 	/// How far, in degrees, the door spins open.
@@ -34,24 +37,16 @@ public class RotatingDoor : MonoBehaviour {
 		}
 	}
 	
-	public void open()	{
-		if (closed) {
+	public virtual void open()	{
+		if (closed && !locked) {
 			opening = true;
 			closed = false;
 		}
 	}
 
-	public void openMaintenance()	{
-		if (closed) {
-			if (GetComponent<PlayerInventory>().checkForKey("MaintenanceKey") == true)
-			{
-				opening = true;
-				closed = false;
-			}
-			else
-			{
-				//display message saying player needs key
-			}
+	public void unlock(string keyName)	{
+		if (keyName == neededKey) {
+			locked = false;
 		}
 	}
 	
