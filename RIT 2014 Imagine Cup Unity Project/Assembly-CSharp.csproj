@@ -49,6 +49,7 @@
      <Compile Include="Assets\Imported Assets\Clock\Scripts\Clock.cs" />
      <Compile Include="Assets\Scripts\AffectPlayer.cs" />
      <Compile Include="Assets\Scripts\ElevatorDoor.cs" />
+     <Compile Include="Assets\Scripts\FadeOut.cs" />
      <Compile Include="Assets\Scripts\Flashlight.cs" />
      <Compile Include="Assets\Scripts\LevelChecks.cs" />
      <Compile Include="Assets\Scripts\PlayerInteraction.cs" />

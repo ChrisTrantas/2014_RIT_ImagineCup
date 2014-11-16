@@ -33,15 +33,21 @@ public class PlayerInteraction : MonoBehaviour {
 			//print ("I'm looking at " + hit.transform.name);
 			gUIContent.text = "I'm looking at " + hit.transform.name;
 
-			if(hit.transform.name == "Panel") {
-				GoingDown ();
-			} else if(hit.transform.name == "Flashlight" && Input.GetKeyDown (KeyCode.E) )	{
+			if(hit.transform.name == "Panel" && Input.GetKeyDown (KeyCode.E)) {
+				print(hit);
+				FadeOut fadeOut = hit.transform.GetComponentInChildren<FadeOut>();
+				print (fadeOut);
+				fadeOut.FadeToNextLevel();
+			} 
+			else if(hit.transform.name == "Flashlight" && Input.GetKeyDown (KeyCode.E) )	{
 				GetComponent<PlayerInventory>().giveFlashlight();
 				hit.transform.gameObject.SetActive(false);
-			} else if(hit.transform.name == "UsableDoor" && Input.GetKeyDown (KeyCode.E) )	{
+			} 
+			else if(hit.transform.name == "UsableDoor" && Input.GetKeyDown (KeyCode.E) )	{
 				if(hit.transform.GetComponent<RotatingDoor>().closed) {
 					hit.transform.GetComponent<RotatingDoor>().open();
-				} else {
+				} 
+				else {
 					hit.transform.GetComponent<RotatingDoor>().close();
 				}
 			}
@@ -56,32 +62,24 @@ public class PlayerInteraction : MonoBehaviour {
 		         gUIStyle);
 	}
 
-	void GoingDown(){
+	void GoingDown() {
 		//Check Mesh Colliders with Character Controller
 
 		//Check Keypressed
 
 		//If 'e' then close the door
 
-		if(Input.GetKeyDown (KeyCode.E)) 
-		{
-			// Load the next scene
-			if(currentLvl == "Intro"){
-				currentLvl = "Start";
-				return currentLvl;
-			}
-			if(currentLvl == "Start")
-			{
-				currentLvl = "1st Level";			
-				return currentLvl;
-			}
-			else if(currentLvl == "1st Level")
-			{
-				currentLvl = "3rd Level";
-				return currentLvl;
 
-				   }
+			// Load the next scene
+			if(currentLvl == "Intro") {
+				currentLvl = "Start";
+
+			} if(currentLvl == "Start") {
+				currentLvl = "1st Level";			
+			} else if(currentLvl == "1st Level") {
+				currentLvl = "3rd Level";
+			}
 			// if load is done turn on light and open door
-		}
+
 	}
 }
