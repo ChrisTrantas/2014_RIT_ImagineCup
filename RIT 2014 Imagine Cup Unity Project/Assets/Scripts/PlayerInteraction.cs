@@ -47,6 +47,11 @@ public class PlayerInteraction : MonoBehaviour {
 				hit.transform.gameObject.SetActive(false);
 				break;
 
+			case "Screwdriver":
+				playerInventory.giveScrewdriver();
+				hit.transform.gameObject.SetActive(false);
+				break;
+				
 			case "MaintenanceKey":
 				playerInventory.giveKey("MaintenanceKey");
 				hit.transform.gameObject.SetActive(false);
