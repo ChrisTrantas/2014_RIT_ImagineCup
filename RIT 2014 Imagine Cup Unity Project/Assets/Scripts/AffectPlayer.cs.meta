@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: dac6d4f00e3a72c4faab3ab1ee5f12da
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - crosshair: {fileID: 2800000, guid: daa48e1c562be314daf92d9331c37269, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
