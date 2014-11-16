@@ -54,7 +54,7 @@
      <Compile Include="Assets\Scripts\PlayerInteraction.cs" />
      <Compile Include="Assets\Scripts\PlayerInventory.cs" />
      <Compile Include="Assets\Scripts\TriggerElevatorDoors.cs" />
-     <Compile Include="Assets\Scripts\triggerLight.cs" />
+     <Compile Include="Assets\Scripts\TriggerLight.cs" />
      <None Include="Assets\Imported Assets\plants\dd\AlphaTest-Bumped.shader" />
      <None Include="Assets\Imported Assets\Chairs and sofas pack\Readme.txt" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />

@@ -5,17 +5,19 @@ public class PlayerInteraction : MonoBehaviour {
 
 	GUIContent gUIContent = new GUIContent();
 	public GUIStyle gUIStyle = new GUIStyle();
-	string currentLvl = "Start";
+	string currentLvl = "Intro";
 
 	private Vector3 vec;
 
 	// Use this for initialization
 	void Start () {
 		//audio.loop = false;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		print (currentLvl);
 		Ray ray;
 		RaycastHit hit;
 		vec.x = (float)Screen.width / 2;
@@ -28,7 +30,7 @@ public class PlayerInteraction : MonoBehaviour {
 
 
 		if (Physics.Raycast (ray, out hit)) {
-			print ("I'm looking at " + hit.transform.name);
+			//print ("I'm looking at " + hit.transform.name);
 			gUIContent.text = "I'm looking at " + hit.transform.name;
 			if(hit.transform.name == "Panel")
 			{
@@ -63,19 +65,21 @@ public class PlayerInteraction : MonoBehaviour {
 
 		if(Input.GetKeyDown (KeyCode.E)) 
 		{
-			//Turn Off Directional Light
-
-			// Play sound maybe?
-			//audio.loop = true;
 			// Load the next scene
+			if(currentLvl == "Intro"){
+				currentLvl = "Start";
+				return currentLvl;
+			}
 			if(currentLvl == "Start")
 			{
-			Application.LoadLevel ("1st Level");
-				currentLvl = "1st Level";
+				currentLvl = "1st Level";			
+				return currentLvl;
 			}
 			else if(currentLvl == "1st Level")
 			{
-				Application.LoadLevel("3rd Level");
+				currentLvl = "3rd Level";
+				return currentLvl;
+
 				   }
 			// if load is done turn on light and open door
 		}
