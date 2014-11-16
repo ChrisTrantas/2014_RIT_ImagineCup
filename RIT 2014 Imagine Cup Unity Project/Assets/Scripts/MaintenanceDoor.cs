@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RotatingDoor : MonoBehaviour {
+public class MaintenanceDoor : MonoBehaviour {
 	public bool closed = true;
 	/// <summary>
 	/// How far, in degrees, the door spins open.
 	/// </summary>
 	public float angleDistance;
 	public float duration = 4;
-
+	
 	bool opening, closing;
 	public GameObject pivot;
 	float currentAngle;
-
+	
 	// Use this for initialization
 	void Start () {
 		currentAngle = transform.rotation.eulerAngles.y;
@@ -36,13 +36,6 @@ public class RotatingDoor : MonoBehaviour {
 	
 	public void open()	{
 		if (closed) {
-			opening = true;
-			closed = false;
-		}
-	}
-
-	public void openMaintenance()	{
-		if (closed) {
 			if (GetComponent<PlayerInventory>().checkForKey("Maintenance") == true)
 			{
 				opening = true;
@@ -50,7 +43,7 @@ public class RotatingDoor : MonoBehaviour {
 			}
 			else
 			{
-				
+
 			}
 		}
 	}
