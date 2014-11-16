@@ -5,6 +5,7 @@ public class PlayerInteraction : MonoBehaviour {
 
 	GUIContent gUIContent = new GUIContent();
 	public GUIStyle gUIStyle = new GUIStyle();
+	string currentLvl = "Start";
 	// Use this for initialization
 	void Start () {
 		//audio.loop = false;
@@ -60,8 +61,15 @@ public class PlayerInteraction : MonoBehaviour {
 			// Play sound maybe?
 			//audio.loop = true;
 			// Load the next scene
+			if(currentLvl == "Start")
+			{
 			Application.LoadLevel ("1st Level");
-			//Object.DontDestroyOnLoad (CharacterController);
+				currentLvl = "1st Level";
+			}
+			else if(currentLvl == "1st Level")
+			{
+				Application.LoadLevel("3rd Level");
+				   }
 			// if load is done turn on light and open door
 		}
 	}

@@ -36,7 +36,4 @@ public class TriggerLight : MonoBehaviour {
 		triggered = true;
 	}
 
-	void Flicker(){
-
-		}
 }
