@@ -5,19 +5,17 @@ public class PlayerInteraction : MonoBehaviour {
 
 	GUIContent gUIContent = new GUIContent();
 	public GUIStyle gUIStyle = new GUIStyle();
-	string currentLvl = "Intro";
+	string currentLvl = "Start";
 
 	private Vector3 vec;
 
 	// Use this for initialization
 	void Start () {
 		//audio.loop = false;
-
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		print (currentLvl);
 		Ray ray;
 		RaycastHit hit;
 		vec.x = (float)Screen.width / 2;
@@ -30,7 +28,7 @@ public class PlayerInteraction : MonoBehaviour {
 
 
 		if (Physics.Raycast (ray, out hit)) {
-			//print ("I'm looking at " + hit.transform.name);
+			print ("I'm looking at " + hit.transform.name);
 			gUIContent.text = "I'm looking at " + hit.transform.name;
 
 			if(hit.transform.name == "Panel") {
@@ -38,9 +36,21 @@ public class PlayerInteraction : MonoBehaviour {
 			} else if(hit.transform.name == "Flashlight" && Input.GetKeyDown (KeyCode.E) )	{
 				GetComponent<PlayerInventory>().giveFlashlight();
 				hit.transform.gameObject.SetActive(false);
-			} else if(hit.transform.name == "UsableDoor" && Input.GetKeyDown (KeyCode.E) )	{
+			}else if(hit.transform.name == "Screwdriver" && Input.GetKeyDown (KeyCode.E) )	{
+				GetComponent<PlayerInventory>().giveScrewdriver();
+				hit.transform.gameObject.SetActive(false);
+			} else if(hit.transform.name == "Maintenance" && Input.GetKeyDown (KeyCode.E) )	{
+				GetComponent<PlayerInventory>().giveKey("Maintenance");
+				hit.transform.gameObject.SetActive(false);
+			}else if(hit.transform.name == "UsableDoor" && Input.GetKeyDown (KeyCode.E) )	{
 				if(hit.transform.GetComponent<RotatingDoor>().closed) {
 					hit.transform.GetComponent<RotatingDoor>().open();
+				} else {
+					hit.transform.GetComponent<RotatingDoor>().close();
+				}
+			}else if(hit.transform.name == "MaintenanceDoor" && Input.GetKeyDown (KeyCode.E) )	{
+				if(hit.transform.GetComponent<RotatingDoor>().closed) {
+					hit.transform.GetComponent<RotatingDoor>().openMaintenance();
 				} else {
 					hit.transform.GetComponent<RotatingDoor>().close();
 				}
@@ -65,21 +75,19 @@ public class PlayerInteraction : MonoBehaviour {
 
 		if(Input.GetKeyDown (KeyCode.E)) 
 		{
+			//Turn Off Directional Light
+
+			// Play sound maybe?
+			//audio.loop = true;
 			// Load the next scene
-			if(currentLvl == "Intro"){
-				currentLvl = "Start";
-				return currentLvl;
-			}
 			if(currentLvl == "Start")
 			{
-				currentLvl = "1st Level";			
-				return currentLvl;
+			Application.LoadLevel ("1st Level");
+				currentLvl = "1st Level";
 			}
 			else if(currentLvl == "1st Level")
 			{
-				currentLvl = "3rd Level";
-				return currentLvl;
-
+				Application.LoadLevel("3rd Level");
 				   }
 			// if load is done turn on light and open door
 		}
